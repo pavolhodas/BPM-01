@@ -2,9 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:WiewModels="clr-namespace:BPM.ViewModels"
              mc:Ignorable="d"
-             x:Class="BPM.MainPage">
+             x:Class="BPM.Views.MainPage">
+    <ContentPage.BindingContext>
+        <WiewModels:MainViewModel/>
+    </ContentPage.BindingContext>
 
     <Grid>
 
@@ -17,14 +20,14 @@
         <Label
             x:Name="bpmLabel"
             Grid.Row="1"
-            Text="0"
+            Text="{Binding BPM,StringFormat='{0:N0}'}"
             HorizontalOptions="Center"
             FontSize="Header " />
         <Button
             Grid.Row="2"
             HorizontalOptions="Center"
             WidthRequest="200"
-            Clicked="Button_Clicked"
+            Command="{Binding TapCommand}"
             Text="TAP" />
     </Grid>
 

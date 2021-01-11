@@ -1,6 +1,8 @@
-﻿using System;
+﻿using BPM.Views;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+
 
 namespace BPM
 {
